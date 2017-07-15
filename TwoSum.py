@@ -14,3 +14,4 @@ def twoSum(self, nums, target):
                 ans.append(i)
                 return ans
             seen.append(nums[i])
+                
