@@ -28,3 +28,23 @@ class Solution(object):
     def depth(self, root) :
         if not root : return 0 
         return 1 + max(self.depth(root.left), self.depth(root.right))
+
+    
+    
+    
+class Solution(object):
+    def diameterOfBinaryTree(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        if not root : return 0
+        left = self.height(root.left)
+        right = self.height(root.right)
+        
+        return max(left+right, self.diameterOfBinaryTree(root.left), self.diameterOfBinaryTree(root.right))
+        
+    def height(self, root) :
+        if not root : return 0
+        return 1 + max(self.height(root.left), self.height(root.right))
+    
